@@ -19,17 +19,17 @@ namespace MaterialSkinExample
             // Initialize MaterialSkinManager
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
-			materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-			materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+            materialSkinManager.Theme = new LightTheme();
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
 
-			// Add dummy data to the listview
-	        seedListView();
+            // Add dummy data to the listview
+            seedListView();
         }
 
-	    private void seedListView()
-	    {
-			//Define
-			var data = new[]
+        private void seedListView()
+        {
+            //Define
+            var data = new[]
 	        {
 		        new []{"Lollipop", "392", "0.2", "0"},
 				new []{"KitKat", "518", "26.0", "7"},
@@ -38,38 +38,46 @@ namespace MaterialSkinExample
 				new []{"Honeycomb", "408", "3.2", "6.5"}
 	        };
 
-			//Add
-			foreach (string[] version in data)
-			{
-				var item = new ListViewItem(version);
-				materialListView1.Items.Add(item);
-			}
-	    }
+            //Add
+            foreach (string[] version in data)
+            {
+                var item = new ListViewItem(version);
+                materialListView1.Items.Add(item);
+            }
+        }
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            materialSkinManager.Theme = materialSkinManager.Theme == MaterialSkinManager.Themes.DARK ? MaterialSkinManager.Themes.LIGHT : MaterialSkinManager.Themes.DARK;
+            if (materialSkinManager.Theme.GetType() == new DarkTheme().GetType())
+                materialSkinManager.Theme = new LightTheme();
+            else
+                materialSkinManager.Theme = new DarkTheme();
         }
 
-	    private int colorSchemeIndex;
+        private int colorSchemeIndex;
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-	        colorSchemeIndex++;
-	        if (colorSchemeIndex > 2) colorSchemeIndex = 0;
+            colorSchemeIndex++;
+            if (colorSchemeIndex > 2) colorSchemeIndex = 0;
 
-			//These are just example color schemes
-	        switch (colorSchemeIndex)
-	        {
-				case 0:
-					materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-			        break;
-				case 1:
-					materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
-			        break;
-				case 2:
-					materialSkinManager.ColorScheme = new ColorScheme(Primary.Green600, Primary.Green700, Primary.Green200, Accent.Red100, TextShade.WHITE);
-					break;
-	        }
+            //These are just example color schemes
+            switch (colorSchemeIndex)
+            {
+                case 0:
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
+                    break;
+                case 1:
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
+                    break;
+                case 2:
+                    materialSkinManager.ColorScheme = new ColorScheme(Primary.Green600, Primary.Green700, Primary.Green200, Accent.Red100, TextShade.WHITE);
+                    break;
+            }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            materialContextMenuStrip1.Visible = true;
         }
     }
 }
