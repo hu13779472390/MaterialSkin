@@ -23,6 +23,18 @@ namespace MaterialSkin.Controls
 
         private SizeF textSize;
 
+        public bool Active { get; set; }
+
+        public bool UseActive { get; set; }
+
+        public Image Icon { get; set; }
+        public Point IconOffset { get; set; }
+        public bool IconBeforeText { get; set; }
+        [Browsable(false)]
+        public Color IconColor { get; set; }
+
+        public bool colorApplied = false;
+
         public MaterialFlatButton()
         {
             Primary = false;
@@ -43,6 +55,8 @@ namespace MaterialSkin.Controls
 
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             AutoSize = true;
+            UseActive = true;
+            Active = false;
             Margin = new Padding(4, 6, 4, 6);
             Padding = new Padding(0);
         }
@@ -60,6 +74,21 @@ namespace MaterialSkin.Controls
             }
         }
 
+        protected override void OnClick(EventArgs e)
+        {
+            foreach (Control c in this.Parent.Controls)
+                if (c.GetType() == this.GetType() && c != this)
+                {
+                    ((MaterialFlatButton)c).Active = false;
+                    ((MaterialFlatButton)c).Refresh();
+                }
+
+            this.Active = !this.Active;
+
+            this.Refresh();
+            base.OnClick(e);
+        }
+
         protected override void OnPaint(PaintEventArgs pevent)
         {
             var g = pevent.Graphics;
@@ -67,8 +96,17 @@ namespace MaterialSkin.Controls
 
             g.Clear(SkinManager.GetFlatButtonBackgroundColor());
 
+            if (this.Image != null)
+                g.DrawImage(this.Image, 0, 0);
+
+            //Active
+            Color c = SkinManager.GetFlatButtonPressedBackgroundActiveColor();
+            if (this.Active && this.UseActive)
+                using (Brush b = SkinManager.GetFlatButtonPressedBackgroundActiveBrush())
+                    g.FillRectangle(b, ClientRectangle);
+
             //Hover
-            Color c = SkinManager.GetFlatButtonHoverBackgroundColor();
+            c = SkinManager.GetFlatButtonHoverBackgroundColor();
             using (Brush b = new SolidBrush(Color.FromArgb((int)(hoverAnimationManager.GetProgress() * c.A), c.RemoveAlpha())))
                 g.FillRectangle(b, ClientRectangle);
 
@@ -89,7 +127,36 @@ namespace MaterialSkin.Controls
                 }
                 g.SmoothingMode = SmoothingMode.None;
             }
-			g.DrawString(Text.ToUpper(), SkinManager.ROBOTO_MEDIUM_10, Enabled ? (Primary ? SkinManager.ColorScheme.PrimaryBrush : SkinManager.GetPrimaryTextBrush()) : SkinManager.GetFlatButtonDisabledTextBrush(), ClientRectangle, new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
+
+            // Text
+            g.DrawString(Text.ToUpper(), SkinManager.ROBOTO_MEDIUM_10, Enabled ? (Primary ? SkinManager.ColorScheme.PrimaryBrush : SkinManager.GetPrimaryTextBrush()) : SkinManager.GetFlatButtonDisabledTextBrush(), ClientRectangle, new StringFormat { Alignment = this.TextAlign == ContentAlignment.MiddleCenter ? StringAlignment.Center : this.TextAlign == ContentAlignment.MiddleLeft ? StringAlignment.Near : StringAlignment.Far, LineAlignment = StringAlignment.Center });
+
+            // Icon
+            if (this.Icon != null)
+            {
+                if (SkinManager.GetIconColor() != this.IconColor)
+                {
+                    this.colorApplied = false;
+                    this.IconColor = SkinManager.GetIconColor();
+                }
+
+                if (!this.colorApplied)
+                {
+                    this.colorApplied = true;
+
+                    Bitmap map = new Bitmap(this.Icon);
+                    for (int y = 0; y < map.Height; y++)
+                        for (int x = 0; x < map.Width; x++)
+                            map.SetPixel(x, y, Color.FromArgb(map.GetPixel(x, y).A, this.IconColor.R, this.IconColor.G, this.IconColor.B));
+
+                    this.Icon = map;
+                }
+
+                if (this.IconBeforeText)
+                    g.DrawImage(this.Icon, (this.Width / 2) - this.textSize.Width, this.IconOffset.Y);
+                else
+                    g.DrawImage(this.Icon, this.IconOffset.X, this.IconOffset.Y);
+            }
         }
 
         private Size GetPreferredSize()
@@ -99,7 +166,7 @@ namespace MaterialSkin.Controls
 
         public override Size GetPreferredSize(Size proposedSize)
         {
-            return new Size((int) textSize.Width + 8, 36);
+            return new Size((int)textSize.Width + 8, 36);
         }
 
         protected override void OnCreateControl()
