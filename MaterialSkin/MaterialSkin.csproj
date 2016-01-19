@@ -63,6 +63,9 @@
     <Compile Include="Controls\MaterialLabel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\MaterialListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\MaterialListView.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -53,6 +53,7 @@ namespace MaterialSkinExample
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.materialSmallCard1 = new MaterialSkin.Controls.MaterialSmallCard();
             this.materialSingleLineTextField3 = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -66,6 +67,7 @@ namespace MaterialSkinExample
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.listBox1 = new MaterialSkin.Controls.MaterialListBox();
             this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
             this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             this.item1ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
@@ -75,7 +77,6 @@ namespace MaterialSkinExample
             this.item2ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.item3ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
-            this.materialSmallCard1 = new MaterialSkin.Controls.MaterialSmallCard();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -421,6 +422,22 @@ namespace MaterialSkinExample
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
+            // materialSmallCard1
+            // 
+            this.materialSmallCard1.BackColor = System.Drawing.Color.Transparent;
+            this.materialSmallCard1.Depth = 0;
+            this.materialSmallCard1.FontColor = "#33b679";
+            this.materialSmallCard1.ForeColor = System.Drawing.Color.Transparent;
+            this.materialSmallCard1.Image = null;
+            this.materialSmallCard1.Info = "Info";
+            this.materialSmallCard1.Location = new System.Drawing.Point(6, 368);
+            this.materialSmallCard1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialSmallCard1.Name = "materialSmallCard1";
+            this.materialSmallCard1.Size = new System.Drawing.Size(201, 52);
+            this.materialSmallCard1.TabIndex = 22;
+            this.materialSmallCard1.Text = "materialSmallCard1";
+            this.materialSmallCard1.ThumbnailColor = "#33b679";
+            // 
             // materialSingleLineTextField3
             // 
             this.materialSingleLineTextField3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -466,7 +483,7 @@ namespace MaterialSkinExample
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(569, 230);
+            this.tabPage2.Size = new System.Drawing.Size(879, 426);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
@@ -518,7 +535,7 @@ namespace MaterialSkinExample
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(569, 230);
+            this.tabPage3.Size = new System.Drawing.Size(879, 426);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "MaterialTabPage3";
             // 
@@ -528,7 +545,7 @@ namespace MaterialSkinExample
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(569, 230);
+            this.tabPage4.Size = new System.Drawing.Size(879, 426);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "ListView";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -551,7 +568,7 @@ namespace MaterialSkinExample
             this.materialListView1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialListView1.Name = "materialListView1";
             this.materialListView1.OwnerDraw = true;
-            this.materialListView1.Size = new System.Drawing.Size(563, 224);
+            this.materialListView1.Size = new System.Drawing.Size(873, 420);
             this.materialListView1.TabIndex = 0;
             this.materialListView1.UseCompatibleStateImageBehavior = false;
             this.materialListView1.View = System.Windows.Forms.View.Details;
@@ -578,19 +595,51 @@ namespace MaterialSkinExample
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.listBox1);
             this.tabPage5.Controls.Add(this.materialProgressBar1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(569, 230);
+            this.tabPage5.Size = new System.Drawing.Size(879, 426);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Depth = 0;
+            this.listBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.listBox1.Font = new System.Drawing.Font("Roboto", 24F);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Item1",
+            "Item2",
+            "Item3",
+            "Item4",
+            "Item5",
+            "Item1",
+            "Item2",
+            "Item3",
+            "Item4",
+            "Item5",
+            "Item1",
+            "Item2",
+            "Item3",
+            "Item4",
+            "Item5"});
+            this.listBox1.Location = new System.Drawing.Point(28, 33);
+            this.listBox1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.listBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(355, 225);
+            this.listBox1.TabIndex = 1;
+            // 
             // materialProgressBar1
             // 
             this.materialProgressBar1.Depth = 0;
-            this.materialProgressBar1.Location = new System.Drawing.Point(16, 208);
+            this.materialProgressBar1.Location = new System.Drawing.Point(328, 391);
             this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialProgressBar1.Name = "materialProgressBar1";
             this.materialProgressBar1.Size = new System.Drawing.Size(534, 5);
@@ -664,20 +713,6 @@ namespace MaterialSkinExample
             this.item3ToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
             this.item3ToolStripMenuItem.Text = "Item 3";
             // 
-            // materialSmallCard1
-            // 
-            this.materialSmallCard1.Depth = 0;
-            this.materialSmallCard1.FontColor = "#33b679";
-            this.materialSmallCard1.Image = null;
-            this.materialSmallCard1.Info = "Info";
-            this.materialSmallCard1.Location = new System.Drawing.Point(140, 245);
-            this.materialSmallCard1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSmallCard1.Name = "materialSmallCard1";
-            this.materialSmallCard1.Size = new System.Drawing.Size(182, 52);
-            this.materialSmallCard1.TabIndex = 22;
-            this.materialSmallCard1.Text = "materialSmallCard1";
-            this.materialSmallCard1.ThumbnailColor = "#33b679";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -738,18 +773,19 @@ namespace MaterialSkinExample
         private MaterialSkin.Controls.MaterialToolStripMenuItem item3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem disabledItemToolStripMenuItem;
-		private MaterialCheckBox materialCheckBox6;
-		private MaterialRaisedButton materialRaisedButton1;
-		private MaterialFlatButton materialFlatButton3;
+        private MaterialCheckBox materialCheckBox6;
+        private MaterialRaisedButton materialRaisedButton1;
+        private MaterialFlatButton materialFlatButton3;
         private MaterialSingleLineTextField materialSingleLineTextField3;
-		private TabPage tabPage4;
-		private MaterialListView materialListView1;
-		private ColumnHeader columnHeader1;
-		private ColumnHeader columnHeader2;
-		private ColumnHeader columnHeader3;
-		private ColumnHeader columnHeader4;
+        private TabPage tabPage4;
+        private MaterialListView materialListView1;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
         private TabPage tabPage5;
         private MaterialProgressBar materialProgressBar1;
         private MaterialSmallCard materialSmallCard1;
+        private MaterialSkin.Controls.MaterialListBox listBox1;
     }
 }

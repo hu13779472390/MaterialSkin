@@ -282,7 +282,11 @@ namespace MaterialSkin
             if (controlToUpdate is MaterialListView)
             {
                 controlToUpdate.BackColor = newBackColor;
+            }
 
+            if (controlToUpdate is MaterialListBox)
+            {
+                controlToUpdate.BackColor = newBackColor;
             }
 
             //recursive call

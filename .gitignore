@@ -187,3 +187,8 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+# My ignore files
+/MaterialSkin/MaterialSkin.nuspec
+/MaterialSkin/NuSpecVersionUpdater.exe
+/MaterialSkin/rebuild_nuget.bat

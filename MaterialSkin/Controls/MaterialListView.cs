@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -16,6 +15,8 @@ namespace MaterialSkin.Controls
         [Browsable(false)]
         public Point MouseLocation { get; set; }
 
+        private const int ITEM_PADDING = 12;
+
         public MaterialListView()
         {
             GridLines = false;
@@ -31,10 +32,7 @@ namespace MaterialSkin.Controls
             //TODO: should only redraw when the hovered line changed, this to reduce unnecessary redraws
             MouseLocation = new Point(-1, -1);
             MouseState = MouseState.OUT;
-            MouseEnter += delegate
-            {
-                MouseState = MouseState.HOVER;
-            };
+            MouseEnter += delegate { MouseState = MouseState.HOVER; };
             MouseLeave += delegate
             {
                 MouseState = MouseState.OUT;
@@ -74,17 +72,17 @@ namespace MaterialSkin.Controls
             var g = Graphics.FromImage(b);
 
             //always draw default background
-            g.FillRectangle(new SolidBrush(SkinManager.GetApplicationBackgroundColor()), new Rectangle(new Point(e.Bounds.X, 0), e.Bounds.Size));
+            g.FillRectangle(new SolidBrush(SkinManager.GetApplicationBackgroundColor()), new Rectangle(new Point(0, 0), e.Bounds.Size));
 
             if (e.State.HasFlag(ListViewItemStates.Selected))
             {
                 //selected background
-                g.FillRectangle(SkinManager.GetFlatButtonPressedBackgroundBrush(), new Rectangle(new Point(e.Bounds.X, 0), e.Bounds.Size));
+                g.FillRectangle(SkinManager.GetFlatButtonPressedBackgroundBrush(), new Rectangle(new Point(0, 0), e.Bounds.Size));
             }
             else if (e.Bounds.Contains(MouseLocation) && MouseState == MouseState.HOVER)
             {
                 //hover background
-                g.FillRectangle(SkinManager.GetFlatButtonHoverBackgroundBrush(), new Rectangle(new Point(e.Bounds.X, 0), e.Bounds.Size));
+                g.FillRectangle(SkinManager.GetFlatButtonHoverBackgroundBrush(), new Rectangle(new Point(0, 0), e.Bounds.Size));
             }
 
             //Draw separator
@@ -95,7 +93,6 @@ namespace MaterialSkin.Controls
             b.Dispose();
         }
 
-        private const int ITEM_PADDING = 12;
         protected override void OnDrawSubItem(DrawListViewSubItemEventArgs e)
         {
             // We draw string for subitem
