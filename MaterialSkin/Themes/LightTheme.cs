@@ -26,6 +26,7 @@ namespace MaterialSkin
 
         //Raised button
         public override Color RAISED_BUTTON_BACKGROUND { get { return Color.FromArgb(255, 255, 255, 255); } }
+        public override Color RAISED_BUTTON_TEXT { get { return Color.FromArgb(222, 255, 255, 255); } }
 
         //Flat button
         public override Color FLAT_BUTTON_BACKGROUND_HOVER { get { return Color.FromArgb(20.PercentageToColorComponent(), 0x999999.ToColor()); } }

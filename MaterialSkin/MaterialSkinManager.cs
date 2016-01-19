@@ -116,7 +116,7 @@ namespace MaterialSkin
             return theme.RAISED_BUTTON_BACKGROUND_BRUSH;
         }
 
-        public Brush GetRaisedButtonTextBrush(bool primary)
+        public Brush GetRaisedButtonTextBrush()
         {
             return theme.RAISED_BUTTON_TEXT_BRUSH;
         }

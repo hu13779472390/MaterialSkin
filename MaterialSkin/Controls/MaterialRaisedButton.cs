@@ -15,14 +15,11 @@ namespace MaterialSkin.Controls
         public MaterialSkinManager SkinManager { get { return MaterialSkinManager.Instance; } }
         [Browsable(false)]
         public MouseState MouseState { get; set; }
-        public bool Primary { get; set; }
 
         private readonly AnimationManager animationManager;
 
         public MaterialRaisedButton()
         {
-            Primary = true;
-
             animationManager = new AnimationManager(false)
             {
                 Increment = 0.03,
@@ -52,7 +49,7 @@ namespace MaterialSkin.Controls
                 ClientRectangle.Height - 1,
                 1f))
             {
-                g.FillPath(Primary ? SkinManager.ColorScheme.PrimaryBrush : SkinManager.GetRaisedButtonBackgroundBrush(), backgroundPath);
+                g.FillPath(SkinManager.ColorScheme.PrimaryBrush, backgroundPath);
             }
 
             if (animationManager.IsAnimating())
@@ -69,8 +66,8 @@ namespace MaterialSkin.Controls
 
             g.DrawString(
                 Text.ToUpper(),
-                SkinManager.ROBOTO_MEDIUM_10, 
-                SkinManager.GetRaisedButtonTextBrush(Primary),
+                SkinManager.ROBOTO_MEDIUM_10,
+                SkinManager.GetRaisedButtonTextBrush(),
                 ClientRectangle,
                 new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
         }
