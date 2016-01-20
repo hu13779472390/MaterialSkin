@@ -31,6 +31,7 @@ namespace MaterialSkin.Controls
             MouseLocation = new Point(-1, -1);
 
             ItemRectangles = new HashSet<Rectangle>();
+            ActualItemRectangle = new Rectangle(-1, -1, 0, 0);
 
             MouseHover += delegate
             {
@@ -52,6 +53,8 @@ namespace MaterialSkin.Controls
                 {
                     // redraw actual hovered item
                     Invalidate(ActualItemRectangle);
+                    // reset ActualItemRectangle before assign - kills flickering
+                    ActualItemRectangle = new Rectangle(-1, -1, 0, 0);
                     // cycle
                     foreach (Rectangle r in ItemRectangles)
                     {
@@ -60,7 +63,7 @@ namespace MaterialSkin.Controls
                         {
                             // set as actual
                             ActualItemRectangle = r;
-                            // invalidate
+                            // invalidate region
                             Invalidate(r);
                             break;
                         }

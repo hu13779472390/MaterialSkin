@@ -77,6 +77,7 @@ namespace MaterialSkinExample
             this.item2ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.item3ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
+            this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -155,7 +156,7 @@ namespace MaterialSkinExample
             // 
             // materialDivider1
             // 
-            this.materialDivider1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+            this.materialDivider1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialDivider1.Depth = 0;
@@ -189,7 +190,7 @@ namespace MaterialSkinExample
             // 
             // materialLabel1
             // 
-            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
@@ -307,7 +308,7 @@ namespace MaterialSkinExample
             // 
             // materialSingleLineTextField2
             // 
-            this.materialSingleLineTextField2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.materialSingleLineTextField2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSingleLineTextField2.Depth = 0;
             this.materialSingleLineTextField2.Hint = "Another example hint";
@@ -326,7 +327,7 @@ namespace MaterialSkinExample
             // 
             // materialSingleLineTextField1
             // 
-            this.materialSingleLineTextField1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.materialSingleLineTextField1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSingleLineTextField1.Depth = 0;
             this.materialSingleLineTextField1.Hint = "This is a hint";
@@ -375,7 +376,7 @@ namespace MaterialSkinExample
             // 
             // materialTabSelector1
             // 
-            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.materialTabSelector1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTabSelector1.BaseTabControl = this.materialTabControl1;
             this.materialTabSelector1.Depth = 0;
@@ -388,8 +389,8 @@ namespace MaterialSkinExample
             // 
             // materialTabControl1
             // 
-            this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.materialTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialTabControl1.Controls.Add(this.tabPage1);
             this.materialTabControl1.Controls.Add(this.tabPage2);
@@ -439,7 +440,7 @@ namespace MaterialSkinExample
             // 
             // materialSingleLineTextField3
             // 
-            this.materialSingleLineTextField3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.materialSingleLineTextField3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.materialSingleLineTextField3.Depth = 0;
             this.materialSingleLineTextField3.Hint = "This is a password";
@@ -593,6 +594,7 @@ namespace MaterialSkinExample
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.materialListBox1);
             this.tabPage5.Controls.Add(this.listBox1);
             this.tabPage5.Controls.Add(this.materialProgressBar1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
@@ -711,6 +713,24 @@ namespace MaterialSkinExample
             this.item3ToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
             this.item3ToolStripMenuItem.Text = "Item 3";
             // 
+            // materialListBox1
+            // 
+            this.materialListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.materialListBox1.Depth = 0;
+            this.materialListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialListBox1.Font = new System.Drawing.Font("Roboto", 24F);
+            this.materialListBox1.FormattingEnabled = true;
+            this.materialListBox1.Items.AddRange(new object[] {
+            "Item1",
+            "Item2"});
+            this.materialListBox1.Location = new System.Drawing.Point(497, 33);
+            this.materialListBox1.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.materialListBox1.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialListBox1.Name = "materialListBox1";
+            this.materialListBox1.Size = new System.Drawing.Size(355, 225);
+            this.materialListBox1.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -785,5 +805,6 @@ namespace MaterialSkinExample
         private MaterialProgressBar materialProgressBar1;
         private MaterialSmallCard materialSmallCard1;
         private MaterialSkin.Controls.MaterialListBox listBox1;
+        private MaterialListBox materialListBox1;
     }
 }
