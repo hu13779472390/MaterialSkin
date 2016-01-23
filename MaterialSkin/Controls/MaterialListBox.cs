@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace MaterialSkin.Controls
@@ -106,6 +107,9 @@ namespace MaterialSkin.Controls
             {
                 g.FillRectangle(SkinManager.GetFlatButtonHoverBackgroundBrush(), new Rectangle(new Point(0, 0), e.Bounds.Size));
             }
+
+            // antialias
+            g.TextRenderingHint = TextRenderingHint.AntiAlias;
 
             //Draw text
             g.DrawString(

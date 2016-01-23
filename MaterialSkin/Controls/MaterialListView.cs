@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace MaterialSkin.Controls
@@ -54,6 +55,9 @@ namespace MaterialSkin.Controls
 
         protected override void OnDrawColumnHeader(DrawListViewColumnHeaderEventArgs e)
         {
+            // antialias
+            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+
             e.Graphics.FillRectangle(
                 new SolidBrush(SkinManager.GetApplicationBackgroundColor()),
                 new Rectangle(e.Bounds.Location, new Size(Bounds.Width - e.Bounds.X, e.Bounds.Height)));
@@ -95,6 +99,9 @@ namespace MaterialSkin.Controls
 
         protected override void OnDrawSubItem(DrawListViewSubItemEventArgs e)
         {
+            // antialias
+            e.Graphics.TextRenderingHint = TextRenderingHint.AntiAlias;
+
             // We draw string for subitem
             e.Graphics.DrawString(
                 e.SubItem.Text,
