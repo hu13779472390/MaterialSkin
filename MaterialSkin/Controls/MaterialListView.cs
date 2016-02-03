@@ -75,8 +75,8 @@ namespace MaterialSkin.Controls
             var b = new Bitmap(e.Item.Bounds.Width, e.Item.Bounds.Height);
             var g = Graphics.FromImage(b);
 
-            //always draw default background
-            g.FillRectangle(new SolidBrush(SkinManager.GetApplicationBackgroundColor()), new Rectangle(new Point(0, 0), e.Bounds.Size));
+            //draw item back color
+            g.FillRectangle(new SolidBrush(e.Item.BackColor), new Rectangle(new Point(0, 0), e.Bounds.Size));
 
             if (e.State.HasFlag(ListViewItemStates.Selected))
             {

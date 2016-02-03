@@ -77,7 +77,6 @@ namespace MaterialSkinExample
             this.item2ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.item3ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
-            this.materialListBox1 = new MaterialSkin.Controls.MaterialListBox();
             this.materialTabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -594,7 +593,6 @@ namespace MaterialSkinExample
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.materialListBox1);
             this.tabPage5.Controls.Add(this.listBox1);
             this.tabPage5.Controls.Add(this.materialProgressBar1);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
@@ -607,6 +605,9 @@ namespace MaterialSkinExample
             // 
             // listBox1
             // 
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listBox1.Depth = 0;
@@ -629,11 +630,11 @@ namespace MaterialSkinExample
             "Item3",
             "Item4",
             "Item5"});
-            this.listBox1.Location = new System.Drawing.Point(28, 33);
+            this.listBox1.Location = new System.Drawing.Point(6, 6);
             this.listBox1.MouseLocation = new System.Drawing.Point(-1, -1);
             this.listBox1.MouseState = MaterialSkin.MouseState.OUT;
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(355, 225);
+            this.listBox1.Size = new System.Drawing.Size(856, 251);
             this.listBox1.TabIndex = 1;
             // 
             // materialProgressBar1
@@ -713,24 +714,6 @@ namespace MaterialSkinExample
             this.item3ToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
             this.item3ToolStripMenuItem.Text = "Item 3";
             // 
-            // materialListBox1
-            // 
-            this.materialListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialListBox1.Depth = 0;
-            this.materialListBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialListBox1.Font = new System.Drawing.Font("Roboto", 24F);
-            this.materialListBox1.FormattingEnabled = true;
-            this.materialListBox1.Items.AddRange(new object[] {
-            "Item1",
-            "Item2"});
-            this.materialListBox1.Location = new System.Drawing.Point(497, 33);
-            this.materialListBox1.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.materialListBox1.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialListBox1.Name = "materialListBox1";
-            this.materialListBox1.Size = new System.Drawing.Size(355, 225);
-            this.materialListBox1.TabIndex = 1;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -805,6 +788,5 @@ namespace MaterialSkinExample
         private MaterialProgressBar materialProgressBar1;
         private MaterialSmallCard materialSmallCard1;
         private MaterialSkin.Controls.MaterialListBox listBox1;
-        private MaterialListBox materialListBox1;
     }
 }

@@ -73,6 +73,7 @@ namespace MaterialSkin.Controls
             };
             MouseDown += delegate { MouseState = MouseState.DOWN; };
             MouseUp += delegate { MouseState = MouseState.HOVER; };
+            Resize += delegate { ItemRectangles.Clear(); };
         }
 
         protected override void OnMeasureItem(MeasureItemEventArgs e)
