@@ -55,7 +55,7 @@ namespace MaterialSkin.Controls
 
         public MaterialTabSelector()
         {
-            SetStyle(ControlStyles.DoubleBuffer | ControlStyles.OptimizedDoubleBuffer, true);
+            SetStyle(ControlStyles.DoubleBuffer | ControlStyles.OptimizedDoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
             Height = 48;
 
             animationManager = new AnimationManager

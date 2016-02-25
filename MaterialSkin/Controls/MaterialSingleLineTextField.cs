@@ -942,7 +942,7 @@ namespace MaterialSkin.Controls
         private readonly BaseTextBox baseTextBox;
         public MaterialSingleLineTextField()
         {
-            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer | ControlStyles.SupportsTransparentBackColor, true);
 
             animationManager = new AnimationManager
             {
